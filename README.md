@@ -1,6 +1,6 @@
 <head>
 
-<title>Mops Wallet core</title>
+
 
 
 

@@ -54,9 +54,6 @@ class MopsWalletCore {
       EthereumAddress address = await privateKey.extractAddress();
       final eipAddress = toEIP55Address(address.toString());
       addresses.add(eipAddress);
-      if (kDebugMode) {
-        print("Evm Address: ${addresses[i]}");
-      }
     }
     return addresses;
   }
@@ -67,26 +64,22 @@ class MopsWalletCore {
     List bech32 = [
     'bc',
     'ltc',
-    'dc',
+    //'dc',
     'via',
     'grs',
-    'a',
-    'b',
-    'bnb',
+    //'bnb',
     'dgb',
   ];
   var derivePath = [
     "m/84'/0'/0'/0/0", //bitcoin
     "m/84'/2'/0'/0/0", //litecoin
-    "m/44'/3'/0'/0/0", //dogecoin not working
-    "m/84'/14'/0'/0/0", //
-    "m/84'/17'/0'/0/0", //
-    "m/49'/3'/0'/0/0", //not working
-    "m/44'/3'/0'/0/0", //not working
-    "m/44'/714'/0'/0/0", //BNB BEP-2 not working
+    //"m/44'/3'/0'/0/0", //dogecoin not working
+    "m/84'/14'/0'/0/0", // viacoin
+    "m/84'/17'/0'/0/0", //grs coin
+    //"m/44'/714'/0'/0/0", //BNB BEP-2 not working
     // "m/44'/195'/0'/0/0",
     // "m/44'/133'/0'/0/0",
-    "m/84'/20'/0'/0/0",
+    "m/84'/20'/0'/0/0",//digibyte coin
     // "m/0/0",
     // "m/44'/165'/0'/0/0"
   ];
@@ -96,10 +89,8 @@ class MopsWalletCore {
     '\x19Dogecoin Signed Message:\n',
     '\x19Bitcoin Signed Message:\n',
     '\x19Bitcoin Signed Message:\n',
-    '\x19Bitcoin Signed Message:\n',
-    '\x19Bitcoin Signed Message:\n',
-    '\x19Bitcoin Signed Message:\n',
-    '\x19Bitcoin Signed Message:\n',
+    // '\x19Bitcoin Signed Message:\n',
+    // '\x19Bitcoin Signed Message:\n',
   ];
   List bip32List = [
     Bip32Type(public: 0x0488b21e, private: 0x0488ade4),
@@ -107,10 +98,8 @@ class MopsWalletCore {
     Bip32Type(public: 0x02facafd, private: 0x02fac398),
     Bip32Type(public: 0x0488b21e, private: 0x0488ade4),
     Bip32Type(public: 0x0488b21e, private: 0x0488ade4),
-    Bip32Type(public: 0x0488b21e, private: 0x0488ade4),
-    Bip32Type(public: 0x0488b21e, private: 0x0488ade4),
-    Bip32Type(public: 0x0488b21e, private: 0x0488ade4),
-    Bip32Type(public: 0x0488b21e, private: 0x0488ade4),
+    // Bip32Type(public: 0x0488b21e, private: 0x0488ade4),
+    // Bip32Type(public: 0x0488b21e, private: 0x0488ade4),
   ];
   List pubKeyHash = [
     0x00,
@@ -118,10 +107,10 @@ class MopsWalletCore {
     0x1e,
     0x00,
     0x00,
-    0x00,
-    0x00,
-    0x00,
-    0x00,
+    // 0x00,
+    // 0x00,
+    // 0x00,
+    // 0x00,
   ];
   List scriptHash = [
     0x05,
@@ -130,9 +119,9 @@ class MopsWalletCore {
     0x05,
     0x05,
     0x05,
-    0x05,
-    0x05,
-    0x05,
+    // 0x05,
+    // 0x05,
+    // 0x05,
   ];
   List wif = [
     0x80,
@@ -141,9 +130,9 @@ class MopsWalletCore {
     0x80,
     0x80,
     0x80,
-    0x80,
-    0x80,
-    0x80,
+    // 0x80,
+    // 0x80,
+    // 0x80,
   ];
   List opreturnSize = [
     80,
@@ -152,9 +141,9 @@ class MopsWalletCore {
     80,
     80,
     80,
-    80,
-    80,
-    80,
+    // 80,
+    // 80,
+    // 80,
   ];
 
   List<String> addressList = [];

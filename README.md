@@ -24,7 +24,7 @@ Add the package to your project
         sdk: flutter
     mops_wallet_core: ^0.0.1
 ```
-  <p>  And you can use the package by adding the following line</p>
+<p>  And you can use the package by adding the following line</p>
     
 ```dart
 import 'package:mops_wallet_core/mops_wallet_core.dart';

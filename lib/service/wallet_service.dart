@@ -1,6 +1,6 @@
 part of mops_wallet_core;
 
-class MopsWalletCore {
+class WalletManager {
   String generateMnemonic() {
     var mnemonic = bip39.generateMnemonic();
     return mnemonic;
@@ -28,7 +28,7 @@ class MopsWalletCore {
     return xPrv;
   }
 
-  Future<List<String>> getethAddress(String mnemonic) async {
+  Future<List<String>> getEvmAddress(String mnemonic) async {
     final List<String> addresses = [];
     final path = [
       "m/44'/60'/0'/0/0", //eth,bsc,matic
@@ -160,14 +160,9 @@ class MopsWalletCore {
           opreturnSize: opreturnSize[i]);
       final seed = bip39.mnemonicToSeed(mnemonic);
       final root = bip32.BIP32.fromSeed(seed);
-
       final key = root.derivePath(derivePath[i]);
-
       final address = P2WPKH.fromPublicKey(key.publicKey).address(network);
-      addressList.add(address);
-      if (kDebugMode) {
-        print(addressList.toString());
-      }
+      addressList.add(address);  
     }
     return addressList;
   }

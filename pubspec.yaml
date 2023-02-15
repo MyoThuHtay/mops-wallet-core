@@ -1,7 +1,7 @@
 name: mops_wallet_core
-description: A new Flutter package project.
+description: Mops Wallet Core for Flutter.
 version: 0.0.1
-homepage: https://github.com/
+homepage: https://github.com/MyoThuHtay/mops-wallet-core
 
 environment:
   sdk: ">=2.17.5 <3.0.0"
@@ -17,6 +17,7 @@ dependencies:
   flutter:
     sdk: flutter
   hex: ^0.2.0
+  path: ^1.8.1
   sqflite: ^2.0.3+1
   web3dart: ^2.3.5
 

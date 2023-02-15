@@ -1,4 +1,3 @@
-// ignore_for_file: depend_on_referenced_packages
 
 library mops_wallet_core;
 
@@ -17,3 +16,4 @@ import 'package:path/path.dart' as p;
 part './service/wallet_service.dart';
 part './database/wallet_database.dart';
 part './model/wallet_model.dart';
+part './controller/wallet_create_controller.dart';

@@ -2,30 +2,65 @@
     <img src="https://raw.githubusercontent.com/MyoThuHtay/MyoThuHtay/1b90bb08016310e07d88b9b3a481997fb39f356d/mops.png"
         height="100">
 </p>
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+<br>
+<br>
+ 
 
 ## Features
-... [features]
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+<p align="left">
+    Create Wallet for BTC,LTC,ETC,ETH,BSC,POLYGON,AION,POA,THETA,VET,CALLISTO(CLO),TOMO,THUNDER TOKEN,GO CHAIN,WAN CHAIN,VIACOIN,GRS,DIGIBYTE And more will coming...
+</p>
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+
+#### To use the package
+<p align="left">
+Add the package to your project
+
+```yaml
+  dependencies:
+    flutter:
+        sdk: flutter
+    mops_wallet_core: ^0.0.1
+```
+    And you can use the package by adding the following line
+    
+```dart
+import 'package:mops_wallet_core/mops_wallet_core.dart';
+```
+</p>
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
-
+#### Example Usage for Creating Wallet
 ```dart
-const like = 'sample';
+createWallet(String name) async {
+  final walletManager = WalletManager();
+  final walletCreate = WalletCreate();
+  String mne = walletManager.generateMnemonic();
+  bool success = walletManager.validateMnemonic(mne);
+  if (!success) {
+    debugPrint('Your Mnemonic is not valid');
+  }
+  Wallets wallet = await walletCreate.createWallet(name, mne);
+  return wallet;
+}
+```
+#### Example Usage for Importing Wallet
+```dart
+createWallet(String name,String mne) async {
+  final walletManager = WalletManager();
+  final walletCreate = WalletCreate();
+  bool success = walletManager.validateMnemonic(mne);
+  if (!success) {
+    debugPrint('Your Mnemonic is not valid');
+  }
+  Wallets wallet = await walletCreate.createWallet(name, mne);
+  return wallet;
+}
 ```
 
 ## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+

@@ -2,6 +2,7 @@ part of mops_wallet_core;
 
 
 
+
 class WalletDatabase {
   static final WalletDatabase instance = WalletDatabase._init();
 

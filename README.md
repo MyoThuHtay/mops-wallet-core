@@ -61,6 +61,6 @@ createWallet(String name,String mne) async {
 }
 ```
 
-## Additional information
+
 
 

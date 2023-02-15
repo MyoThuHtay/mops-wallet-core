@@ -1,10 +1,5 @@
+<html>
 <head>
-
-
-
-
-
-
 <meta name="google-site-verification" content="3DzEdBE4aebRdPgDP0Ad4pB2rvRaAR9cqJdiR-WyQjM" />
 </head>
 <p align="center">
@@ -72,4 +67,4 @@ createWallet(String name,String mne) async {
 
 
 
-
+</html>

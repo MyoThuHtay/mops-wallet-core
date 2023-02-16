@@ -1,19 +1,46 @@
-name: Publish to pub.dev
 
-on:
 
-  push:
 
-    tags:
 
-      - 'v[0-9]+.[0-9]+.[0-9]+*'
+
+
+
+
+    
+
+
+
+  
+
+
+
+   
+
+
+name: Publish to Pub.dev
+
+on: push
 
 jobs:
 
-  publish:
+  publishing:
 
-    uses: dart-lang/setup-dart/.github/workflows/publish.yml
+    runs-on: ubuntu-latest
 
-    # with:
+    steps:
 
-    #   working-directory: path/to/package/within/repository
+      - name: 'Checkout'
+
+        uses: actions/checkout@main # required!
+
+        
+
+      - name: '>> Dart package <<'
+
+        uses: k-paxian/dart-package-publisher@master
+
+        with:
+
+          accessToken: ${{ secrets.OAUTH_ACCESS_TOKEN }}
+
+          refreshToken: ${{ secrets.OAUTH_REFRESH_TOKEN }}

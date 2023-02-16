@@ -51,7 +51,7 @@ class WalletManager {
     for (int i = 0; i < path.length; i++) {
       ExtendedKey key = chain.forPath(path[i]);
       EthPrivateKey privateKey = EthPrivateKey.fromHex(key.privateKeyHex());
-      EthereumAddress address = await privateKey.extractAddress();
+      EthereumAddress address = await privateKey.address();
       final eipAddress = toEIP55Address(address.toString());
       addresses.add(eipAddress);
     }
